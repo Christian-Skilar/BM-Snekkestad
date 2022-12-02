@@ -1,0 +1,100 @@
+#gallery {
+    flex-direction: column;
+    max-width: 1000px !important;
+
+    h2 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .img-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 500px;
+        width: 100%;
+        margin: 0 auto;
+        overflow-x: scroll;
+
+        img {
+            max-width: 32.5%;
+            padding: 3px;
+        }
+    }
+
+    p {
+        text-align: center;
+        margin-top: 40px;
+        padding: 0 20px;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #115099;
+        color: #fff;
+        text-decoration: none;
+        width: 200px;
+        font-size: 13px;
+        text-align: center;
+        padding: 7px;
+        margin: 0 auto;
+        border-radius: 5px;
+
+        .insta {
+            margin-right: 5px;
+            font-size: 18px;
+        }
+    }
+}
+
+//
+// ---------- MOBIL ----------
+//
+
+@media screen and (max-width: 1000px) {
+
+    #gallery {
+    
+        .img-container {
+            height: 80vh;
+            width: 90%;
+    
+            img {
+                max-width: 32.5%;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    #gallery {
+    
+        .img-container {
+            width: 90%;
+    
+            img {
+                max-width: 31%;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+
+    #gallery {
+    
+        .img-container {
+            width: 90%;
+    
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+}

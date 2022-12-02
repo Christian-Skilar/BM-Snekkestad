@@ -1,0 +1,88 @@
+#about {
+    flex-direction: column;
+    padding: 60px 20px 0 20px;
+
+    h2 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .about-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 100px;
+
+        .about-image {
+            width: 450px;
+            border-radius: 3px;
+            transition: 200ms;
+        }
+
+        div {
+            padding-left: 30px;
+
+            p {
+                max-width: 450px;
+            }
+        }
+
+        .second {
+            padding: 0 30px 0 0;
+        }
+    }
+}
+
+
+//
+// ---------- MOBIL ----------
+//
+
+@media screen and (max-width: 800px) {
+
+    .about-image {
+        width: 300px !important;
+    }
+
+    p {
+        font-size: 14px !important;
+    }
+
+}
+
+@media screen and (max-width: 620px) {
+
+    .row-reverse {
+        flex-direction: column-reverse !important;
+    }
+
+    .about-row {
+        flex-wrap: wrap;
+
+        .about-image {
+            width: 70% !important;
+        }
+
+        div {
+            width: 70% !important;
+            padding: 0 !important;
+        }
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .about-row {
+
+        .about-image {
+            width: 90% !important;
+        }
+
+        div {
+            width: 90% !important;
+        }
+    }
+
+}

@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('./font/Poppins-Light.ttf') format('ttf');
+  }
+
+
+html {
+    scroll-behavior: smooth;
+  }
+
+body {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    color: #115099;
+}
+
+span {
+    font-weight: bold;
+}
+
+textarea {
+    font-family: 'Poppins';
+}
+
+.border-line {
+    margin: -15px auto;
+    width: 200px;
+    border-top: 1.5px solid #115099;
+    padding-bottom: 80px;
+}
+
+#header, #about, #gallery, #contact {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#contact {
+    min-height: 100vh;
+}
