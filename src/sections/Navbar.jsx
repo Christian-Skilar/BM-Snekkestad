@@ -9,7 +9,6 @@ import './Navbar.scss';
 const Navbar = () => {
 
     const [windowDimension, setWindowDimension] = useState(null);
-    const style = { color: "#353439", fontSize: "20px" }
 
     useEffect(() => {
       setWindowDimension(window.innerWidth);
@@ -44,10 +43,10 @@ const Navbar = () => {
         ) : (
         <motion.nav className='navbar'>
             <motion.ul className='nav-links'>
-                <a href="#header" className='link-col link-text'><BiHomeSmile style={style}/>Home</a>
-                <a href="#about" className='link-col link-text'><TbHammer style={style}/>About</a>
-                <a href="#gallery" className='link-col link-text'><BiImage style={style}/>Galleri</a>
-                <a href="#contact" className='link-col link-text'><BiMailSend style={style}/>Contact</a>
+                <a href="#header" className='link-col link-text'><BiHomeSmile className="menu-logo" />Home</a>
+                <a href="#about" className='link-col link-text'><TbHammer className="menu-logo" />About</a>
+                <a href="#gallery" className='link-col link-text'><BiImage className="menu-logo" />Galleri</a>
+                <a href="#contact" className='link-col link-text'><BiMailSend className="menu-logo" />Contact</a>
             </motion.ul>
         </motion.nav>
         )}

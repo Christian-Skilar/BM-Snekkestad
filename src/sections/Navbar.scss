@@ -58,6 +58,7 @@
         height: 1px;
         background-color: #115099;
       }
+
 }
 
 
@@ -69,6 +70,7 @@
     .navbar {
         width: 100%;
         bottom: 0;
+        background-color: #0e2a56;
     }
 
     .link-col {
@@ -86,9 +88,10 @@
 
     .link-text {
         font-size: 12px;
+        color: #fff;
 
         &:hover {
-            color: #353439;
+            color: #fff;
         }
     
         &:after {
@@ -99,6 +102,11 @@
             display: none;
           }
     }
+
+    .menu-logo {
+        color: #fff;
+        font-size: 20px;
+      }
 
 }
 

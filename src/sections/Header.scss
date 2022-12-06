@@ -1,49 +1,75 @@
+@import "../App.scss";
+
 #header {
     position: relative;
     flex-direction: column;
 
-    .banner-container {
-        position: relative;
-        width: 100%;
-        height: 300px;
-        background-image: url("../assets/bannerbg.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+    .header-row {
+        @include bg-img;
+        display: flex;
+        flex-direction: row;
+        padding: 60px 20px;
+        justify-content: center;
+        align-items: center;
 
-        .h2-1 {
-            position: absolute;
-            top: 10%;
-            left: 2%;
+        .banner-container {
+            position: relative;
+            background-color: #0e2a56;
+            border-radius: 5px 0 0 5px;
+            width: 40%;
+            padding: 0 40px 40px 20px ;
+
+            img {
+                position: absolute;
+                width: 100px;
+                right: 30px;
+                bottom: 10px ;
+            }
         }
 
-        .h2-2 {
-            position: absolute;
-            top: 18%;
-            left: 2%;
-            color: #115099;
-            font-size: 37px;
-            font-weight: 900;
+        .h1 {
+            color: #469cf7;
+            font-size: 40px;
+            margin: 15px 0 0 0;
+        }
+
+        .h2-1, .h2-2 {
+            font-size: 21px;
+            font-weight: 300;
+            color: #fff;
+
+            span {
+                font-size: 27px;
+                color: #469cf7;
+            }
         }
 
         .btn {
-            position: absolute;
+            display: inline-block;
             width: 150px;
-            left: 2%;
-            top: 55%;
             text-align: center;
             padding: 10px;
+            margin-top: 20px;
             text-decoration: none;
             color: #fff;
-            background-color: #115099;
+            background-color: #469cf7;
             border-radius: 3px;
         }
+
+        .banner-img {
+            width: 300px;
+            height: 100%;
+            border-radius: 0 5px 5px 0;
+        }
+
     }
 
 
     .illustrations-row {
         display: flex;
         justify-content: space-evenly;
+        align-items: center;
+        min-height: 70vh;
         margin-top: 50px;
 
         div {
@@ -52,18 +78,13 @@
             align-items: center;
 
             p {
-                font-size: 14px;
+                font-size: 20px;
             }
         }
     }
 
     .illustrations {
-        background-color: #fff;
-        border: 2px solid #115099;
-        color: #115099;
-        font-size: 40px;
-        padding: 25px;
-        border-radius: 35px;
+        width: 70%;
     }
 }
 
@@ -72,111 +93,124 @@
 // ---------- MOBIL ----------
 //
 
-@media screen and (max-width: 780px) {
-
+@media screen and (max-width: 1018px) {
     #header {
-
-        .banner-container {
-            height: 250px;
     
-            .h2-1 {
-                font-size: 20px;
+        .header-row {
+    
+            .banner-container {
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 853px) {
+    #header {
+    
+        .header-row {
+    
+            .banner-container {
+    
+                img {
+                    width: 70px;
+                }
             }
     
-            .h2-2 {
+            .h1 {
                 font-size: 30px;
             }
     
-            .btn {
-                font-size: 14px;
-                width: 130px;
-                padding: 7px;
-            }
-        }
-
-        .illustrations {
-            font-size: 30px;
-            padding: 20px;
-            border-radius: 35px;
-        }
-    }
-}
-
-
-@media screen and (max-width: 599px) {
-
-    #header {
-        padding-top: 0 !important;
-
-        .banner-container {
-    
-            .h2-1 {
+            .h2-1, .h2-2 {
                 font-size: 16px;
-                top: 5%;
-            }
     
-            .h2-2 {
-                top: 13%;
-                font-size: 23px;
+                span {
+                    font-size: 22px;
+                }
             }
     
             .btn {
-                font-size: 12px;
-                width: 130px;
-                top: 40%;
+                width: 120px;
+                padding: 7px;
+                font-size: 14px;
+                margin-top: 20px;
             }
+    
+            .banner-img {
+                width: 250px;
+            }
+    
         }
-
     }
 }
 
 
-
-@media screen and (max-width: 470px) {
-
+@media screen and (max-width: 656px) {
     #header {
+    
+        .header-row {
+            flex-wrap: wrap;
 
-        .banner-container {
-            height: 200px;
-    
-            .h2-1 {
-                font-size: 12px;
-                top: 5%;
+            .banner-container {
+                width: 100%;
+                border-radius: 5px 5px 0 0;
+                padding: 0 20px 40px 20px ;
             }
     
-            .h2-2 {
-                top: 13%;
-                font-size: 18px;
-            }
-    
-            .btn {
-                font-size: 10px;
-                width: 100px;
-                top: 40%;
+            .banner-img {
+                width: 100%;
+                border-radius: 0 0 5px 5px;
             }
         }
 
-    }
-
-}
-
-
-
-@media screen and (max-width: 400px) {
-
-    #header {
-
-        a {
-            font-size: 9px;
-            width: 70px;
-            padding: 3px;
+        .illustrations-row {
+            flex-wrap: wrap;
+    
+            div {
+    
+                p {
+                    font-size: 25px !important;
+                }
+            }
         }
-
+    
         .illustrations {
-            border: 1px solid #115099;
-            font-size: 25px;
-            padding: 10px;
-            border-radius: 35px;
+            margin-top: 50px;
+        }
+    }   
+}
+
+@media screen and (max-width: 420px) {
+    #header {
+
+        .illustrations-row {
+    
+            div {
+    
+                p {
+                    font-size: 16px !important;
+                }
+            }
         }
     }
 }
+
+
+@media screen and (max-width: 386px) {
+
+    #header {
+    
+        .header-row {
+    
+            .h2-1, .h2-2 {
+                font-size: 14px;
+    
+                span {
+                    font-size: 19px;
+                }
+            }
+        }
+    }
+}
+
+

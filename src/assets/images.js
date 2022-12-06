@@ -18,6 +18,11 @@ import banner from './banner.png';
 import bannerbg from './bannerbg.png';
 import profilimg from './profilimg.jpg';
 import profilimg2 from './profilimg2.png';
+import profilimg3 from './profilimg3.jpg';
+import mesterw from './mesterbrev.png';
+import tilbygg from './tilbygg.png';
+import nybygg from './nybygg.png';
+import fix from './fix.png';
 
 const images = {
   logo,
@@ -25,6 +30,11 @@ const images = {
   bannerbg,
   profilimg,
   profilimg2,
+  profilimg3,
+  mesterw,
+  tilbygg,
+  nybygg,
+  fix,
   bm1,
   bm2,
   bm3,
