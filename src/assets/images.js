@@ -23,6 +23,8 @@ import mesterw from './mesterbrev.png';
 import tilbygg from './tilbygg.png';
 import nybygg from './nybygg.png';
 import fix from './fix.png';
+import logomobile from './logomobile.png';
+import check from './check.png';
 
 const images = {
   logo,
@@ -50,6 +52,8 @@ const images = {
   bm13,
   bm14,
   bm15,
+  logomobile,
+  check,
 };
 
 export default images;

@@ -8,8 +8,8 @@ const Header = () => {
       <div className='header-row'>
         <div className='banner-container'>
           <h1 className='h1'>BM Snekkestad</h1>
-          <h2 className='h2-1'>Hjelper deg på veien til å <span>Realisere</span></h2>
-          <h2 className='h2-2'>Ditt neste byggprosjekt</h2>
+          <h2 className='h2-1'>Hjelper deg med å Realisere</h2>
+          <h2 className='h2-2'>ditt neste byggprosjekt</h2>
           <a className='btn' href="#contact">Ta Kontakt</a>
           <img src={images.mesterw} alt="mesterbrev" />
         </div>

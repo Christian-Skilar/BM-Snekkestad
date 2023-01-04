@@ -11,13 +11,16 @@
         padding: 60px 20px;
         justify-content: center;
         align-items: center;
+        height: 50px;
 
         .banner-container {
             position: relative;
+            top: 150px;
             background-color: #0e2a56;
             border-radius: 5px 0 0 5px;
             width: 40%;
             padding: 0 40px 40px 20px ;
+            height: 260px;
 
             img {
                 position: absolute;
@@ -37,11 +40,6 @@
             font-size: 21px;
             font-weight: 300;
             color: #fff;
-
-            span {
-                font-size: 27px;
-                color: #469cf7;
-            }
         }
 
         .btn {
@@ -57,8 +55,10 @@
         }
 
         .banner-img {
+            position: relative;
+            top: 150px;
             width: 300px;
-            height: 100%;
+            height: 300px;
             border-radius: 0 5px 5px 0;
         }
 
@@ -67,24 +67,24 @@
 
     .illustrations-row {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
-        min-height: 70vh;
-        margin-top: 50px;
+        margin-top: 250px;
 
         div {
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 0 30px;
 
             p {
-                font-size: 20px;
+                font-size: 18px;
             }
         }
     }
 
     .illustrations {
-        width: 70%;
+        width: 200px;
     }
 }
 
@@ -105,6 +105,7 @@
     }
 }
 
+
 @media screen and (max-width: 853px) {
     #header {
     
@@ -123,10 +124,6 @@
     
             .h2-1, .h2-2 {
                 font-size: 16px;
-    
-                span {
-                    font-size: 22px;
-                }
             }
     
             .btn {
@@ -141,6 +138,13 @@
             }
     
         }
+
+        .illustrations-row {
+    
+            div {
+                padding: 0 10px;
+            }
+        }
     }
 }
 
@@ -153,23 +157,27 @@
 
             .banner-container {
                 width: 100%;
+                top: 0;
                 border-radius: 5px 5px 0 0;
                 padding: 0 20px 40px 20px ;
+                height: 240px;
             }
     
             .banner-img {
                 width: 100%;
+                top: 0;
                 border-radius: 0 0 5px 5px;
             }
         }
 
         .illustrations-row {
             flex-wrap: wrap;
+            margin-top: 450px;;
     
             div {
     
                 p {
-                    font-size: 25px !important;
+                    font-size: 18px !important;
                 }
             }
         }
@@ -201,13 +209,9 @@
     #header {
     
         .header-row {
-    
+
             .h2-1, .h2-2 {
                 font-size: 14px;
-    
-                span {
-                    font-size: 19px;
-                }
             }
         }
     }

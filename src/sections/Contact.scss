@@ -9,7 +9,6 @@
 
     h2 {
         font-size: 30px;
-        margin-top: 100px;
     }
 
     h3 {
@@ -26,25 +25,64 @@
     }
 }
 
-.form-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0 auto;
-
-    .profilbilde {
-        width:35%;
-        height: 400px;
-        margin-top: 25px;
-        border-radius: 3px;
-        margin-left: 20px;
+    .popup {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 320px;
+      margin-top: 250px;
+      padding: 40px 20px;
+      box-shadow:
+      2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+      6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+      12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+      22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+      41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+      100px 100px 80px rgba(0, 0, 0, 0.07);
+      transition: all 300ms ease-in;
+  
+      h2 {
+        font-size: 27px;
+        margin: 20px 0 10px 0;
+      }
+  
+      p {
+        font-size: 14px;
+      }
+  
+      img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        border-radius: 50%;
+        box-shadow:
+        3.4px 3.4px 2.7px rgba(0, 0, 0, 0.022),
+        8.7px 8.7px 6.9px rgba(0, 0, 0, 0.031),
+        17.7px 17.7px 14.2px rgba(0, 0, 0, 0.039),
+        36.5px 36.5px 29.2px rgba(0, 0, 0, 0.048),
+        100px 100px 80px rgba(0, 0, 0, 0.07);
+      }
+  
+      button {
+        color: #fff;
+        background-color: #2197F3;
+        border: none;
+        padding: 12px;
+        width: 200px;
+        margin: 40px auto -15px auto;
+        border-radius: 5px;
+        cursor: pointer;
+      }
     }
 
-    .profilbilde-mobile {
-        display: none;
-    }
-}
 
   .contact-form {
     width: 90%;
@@ -65,13 +103,18 @@
         height: 170px;
       }
 
-      .error-text{
+      .input-error {
+        border: 1px solid #FC4E49;
+      }
+
+      .error-message{
         color: #FC4E49;
+        text-transform: capitalize;
         width: 80%;
         text-align: left;
-        font-size: 12px;
+        font-size: 11px;
         font-style: italic;
-        margin-left: 10%;
+        margin: -5px auto 15px auto;
       }
     
   
@@ -80,8 +123,8 @@
       justify-content: center;
       align-items: center;
       width: 150px;
-      padding: 10px 30px;
-      border-radius: 10px;
+      padding: 15px 30px;
+      border-radius: 5px;
       border: none;
       background-color: #115099;
       color: #fff;
@@ -90,13 +133,6 @@
       outline: none;
       margin: 0 auto;
       cursor: pointer;
-    }
-
-    .success-message {
-      display: flex;
-      color: #00B500;
-      margin-top: 15px;
-
     }
   
   }
@@ -146,7 +182,6 @@
 //
 @media screen and (max-width: 500px) {
 
-
     .contact-form {
         width: 90%;
 
@@ -186,7 +221,10 @@
   @media screen and (max-width: 600px) {
     
     .copyright {
-        margin-bottom: 62px;
+        margin-bottom: 60px;
+        text-align: right;
+        margin-right: 10px;
+        font-size: 7px !important;
     }
   }
 
@@ -204,21 +242,8 @@
         margin: 10px auto;
     }
 
-    .form-section {
-        flex-direction: column;
-    
-        .profilbilde {
-            display: none;
-        }
-
-        .profilbilde-mobile {
-            display: block;
-            width: 300px;
-            height: 200px;
-            border-radius: 3px;
-            padding-bottom: 40px;
-            margin: 0 auto;
-        }
+    .popup {
+      margin-top: 450px;
     }
 
   .footer {

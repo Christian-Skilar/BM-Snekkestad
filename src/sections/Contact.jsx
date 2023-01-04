@@ -11,13 +11,23 @@ import images from '../assets/images';
 
 
 
-const Result = () => {
+const Success = () => {
+  const [showElement, setShowElement] = useState(true);
+
+  const handleClick = () => {
+    setShowElement(false);
+  };
+  
   return (
-    <div className='success-message'>
-      <p>Din melding er sendt</p>
-    </div>
+    showElement? <div className='popup' id='popup'>
+      <img src={images.check} alt="success check" />
+      <h2>Takk</h2>
+      <p>Din melding er sendt. Vi kommer tilbake til deg så fort som mulig</p>
+      <button onClick={handleClick}>OK</button>
+    </div>: null
   )
 }
+
 
 
 const Contact = () => {
@@ -26,7 +36,7 @@ const Contact = () => {
   const [result, showResult] = useState(false);
   const style = { color: "#115099", fontSize: "22px" }
 
-  const formik = useFormik({
+  const { errors, touched, handleBlur, values, handleChange, handleSubmit } = useFormik({
     initialValues: {
       name: '', 
       telefon: '',
@@ -34,20 +44,16 @@ const Contact = () => {
       message: '' 
     },
     validationSchema: Yup.object({
-      name: Yup.string()
-	    .required('Mangler Navn'),
-      email: Yup.string()
-	    .required('Mangler epost'),
-      telefon: Yup.string()
-	    .required('Mangler nummer'),
-      message: Yup.string()
-      .required('Melding er for kort')
+      name: Yup.string().required('Mangler Navn'),
+      email: Yup.string().email('Mangler epost').required('Mangler epost'),
+      telefon: Yup.string().required('Mangler telefon nummer'),
+      message: Yup.string().min(10).required("message to short, min 10 characters")
     }),
     onSubmit: (values, {resetForm}) => {
       resetForm({ values: '' })
        emailjs.sendForm(
-        'service_re4pbq9', 
-        'template_7kt7iq8', 
+        'service_gdtnfmu', 
+        'template_3tt4iot', 
         form.current, 
         'fhMC_ZVTG0ctP8k6q'
         )
@@ -65,71 +71,64 @@ const Contact = () => {
           // Hide success message after some time
         setTimeout(() => {
         showResult(false);
-      }, 5000);
+      }, 15000);
    },
 });
 
   return (
-    <div>
+  <div>
     <div id='contact' className='contact'>
       <h2>Ta Kontakt</h2>
       <h3>For en uforpliktende befaring <br/> og en hyggelig prat om ditt neste prosjekt</h3>
       <div className='border-top'/>
-      <div className='form-section'>
-        <img className='profilbilde' src={images.profilimg} alt="snekkestad" />
-        <img className='profilbilde-mobile' src={images.profilimg2} alt="snekkestad" />
-        <form ref={form} onSubmit={formik.handleSubmit} className="contact-form">
+
+        <form ref={form} onSubmit={handleSubmit} className="contact-form">
             <input 
               placeholder='Navn' 
               type="text" 
               name="name" 
-              className="p-text"
-              onChange={formik.handleChange}
-              value={formik.values.name}
+              onBlur={handleBlur}
+              className={errors.name && touched.name ? "input-error" : ""}
+              onChange={handleChange}
+              value={values.name}
               />
-                <div className={`error-text ${formik.touched.name && formik.errors.name ? 'show' : ''}`}>
-                        {formik.errors.name}
-                </div>
+              {errors.name && touched.name && <p className='error-message'>{errors.name}</p>}
 
               <input 
               placeholder='Tlf' 
               type="number" 
               name="telefon" 
-              className="p-text"
-              onChange={formik.handleChange}
-              value={formik.values.telefon}
+              onBlur={handleBlur}
+              className={errors.telefon && touched.telefon ? "input-error" : ""}
+              onChange={handleChange}
+              value={values.telefon}
               />
-                <div className={`error-text ${formik.touched.telefon && formik.errors.telefon ? 'show' : ''}`}>
-                        {formik.errors.telefon}
-                </div>
+              {errors.telefon && touched.telefon && <p className='error-message'>{errors.telefon}</p>}
               
               <input 
               placeholder='Epost' 
               type="email" 
               name="email" 
-              className="p-text"
-              onChange={formik.handleChange}
-              value={formik.values.email}
+              onBlur={handleBlur}
+              className={errors.email && touched.email ? "input-error" : ""}
+              onChange={handleChange}
+              value={values.email}
               />
-                <div className={`error-text ${formik.touched.email && formik.errors.email ? 'show' : ''}`}>
-                        {formik.errors.email}
-                </div>
+              {errors.email && touched.email && <p className='error-message'>{errors.email}</p>}
 
               <textarea 
               placeholder='Melding' 
               name="message" 
-              className="p-text"
-              onChange={formik.handleChange}
-              value={formik.values.message}
+              onBlur={handleBlur}
+              className={errors.message && touched.message ? "input-error" : ""}
+              onChange={handleChange}
+              value={values.message}
               />
-                <div className={`error-text ${formik.touched.message && formik.errors.message ? 'show' : ''}`}>
-                        {formik.errors.message}
-                </div>
+              {errors.message && touched.message && <p className='error-message'>{errors.message}</p>}
               
             <input type="submit" value="Send" className="button" />
-            <div>{result ? <Result/> : null}</div>
           </form>
-        </div>
+          {result ? <Success/> : null}
     </div>
 
     <div className='footer'>
@@ -151,14 +150,11 @@ const Contact = () => {
           <p>BM Snekkestad AS</p>
         </div>
       </div>
-
       <iframe title="location" className='google-maps' frameBorder="0" scrolling="no" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Marienborgveien%206,%20N%C3%B8tter%C3%B8y,%20Norway%20+(BM%20Snekkestad)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-
-
     </div>
 
-    <p className='copyright'>© {(new Date().getFullYear())} <a href="https://larsen-portfolio.netlify.app/">Larsen-Web</a></p>
-    </div>
+    <p className='copyright'>© {(new Date().getFullYear())} <a href="https://larsenweb3.com/">Larsen-Web</a></p>
+  </div>
   );
 };
 

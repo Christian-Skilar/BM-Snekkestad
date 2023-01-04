@@ -61,6 +61,12 @@
 
 }
 
+.mobile-logo {
+    width: 60px;
+    height: 60px;
+    margin-top: -30px;
+}
+
 
 // ----- MEDIA SIZE -----
 //
@@ -82,7 +88,7 @@
     .nav-links {
         width: 100%;
         padding: 0;
-        margin: 5px 0;
+        margin: 0;
         justify-content: center;
     }
 
@@ -105,7 +111,7 @@
 
     .menu-logo {
         color: #fff;
-        font-size: 20px;
+        font-size: 25px;
       }
 
 }
@@ -119,6 +125,12 @@
     .link-text {
         font-size: 10px;
         margin: 0 20px;
+    }
+
+    .mobile-logo {
+        width: 50px;
+        height: 50px;
+        margin-top: -15px;
     }
 
 }

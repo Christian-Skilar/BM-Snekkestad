@@ -45,8 +45,10 @@
         width: 300px !important;
     }
 
-    p {
-        font-size: 14px !important;
+    .about-row {
+        p {
+            font-size: 14px !important;
+        }
     }
 
 }
@@ -73,6 +75,13 @@
 }
 
 @media screen and (max-width: 500px) {
+
+    #about {
+    
+        h2 {
+            font-size: 30px;
+        }
+    }
 
     .about-row {
 

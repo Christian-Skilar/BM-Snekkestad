@@ -3,6 +3,28 @@
     src: url('./font/Poppins-Light.ttf') format('ttf');
   }
 
+  .loading {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+
+    h2 {
+        font-size: 20px;
+    }
+
+    img {
+        width: 70px;
+    }
+  }
+  
+
 
 html {
     scroll-behavior: smooth;
@@ -36,17 +58,13 @@ textarea {
 #header, #about, #gallery, #contact {
     display: flex;
     justify-content: center;
-    padding-top: 60px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-#contact {
-    min-height: 100vh;
-}
-
 #header {
     max-width: 2000px;
+    padding-top: 60px;
 
     @media screen and (max-width: 599px) {
         margin-top: -60px;
