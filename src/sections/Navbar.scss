@@ -76,7 +76,7 @@
     .navbar {
         width: 100%;
         bottom: 0;
-        background-color: #0e2a56;
+        background-color: #fff;
     }
 
     .link-col {
@@ -94,10 +94,10 @@
 
     .link-text {
         font-size: 12px;
-        color: #fff;
+        color: #0e2a56;
 
         &:hover {
-            color: #fff;
+            color: #0e2a56;
         }
     
         &:after {
@@ -110,7 +110,7 @@
     }
 
     .menu-logo {
-        color: #fff;
+        color: #0e2a56;
         font-size: 25px;
       }
 

@@ -25,6 +25,10 @@ import nybygg from './nybygg.png';
 import fix from './fix.png';
 import logomobile from './logomobile.png';
 import check from './check.png';
+import tools from './tools.jpg';
+import tilbygg1 from './tilbygg1.png';
+import fix1 from './fix1.png';
+import nybygg1 from './nybygg1.png';
 
 const images = {
   logo,
@@ -54,6 +58,10 @@ const images = {
   bm15,
   logomobile,
   check,
+  tools,
+  tilbygg1,
+  fix1,
+  nybygg1,
 };
 
 export default images;

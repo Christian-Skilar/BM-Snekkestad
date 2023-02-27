@@ -1,32 +1,44 @@
 @import "../App.scss";
 
 #header {
-    position: relative;
     flex-direction: column;
+    @include bg-img;
 
     .header-row {
-        @include bg-img;
         display: flex;
+        min-height: 100vh;
+        margin-top: -60px;
         flex-direction: row;
-        padding: 60px 20px;
         justify-content: center;
         align-items: center;
-        height: 50px;
 
         .banner-container {
-            position: relative;
-            top: 150px;
             background-color: #0e2a56;
             border-radius: 5px 0 0 5px;
             width: 40%;
             padding: 0 40px 40px 20px ;
             height: 260px;
 
-            img {
-                position: absolute;
-                width: 100px;
-                right: 30px;
-                bottom: 10px ;
+            div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .btn {
+                    display: block;
+                    width: 150px;
+                    height: 25px;
+                    text-align: center;
+                    padding: 10px;
+                    text-decoration: none;
+                    color: #fff;
+                    background-color: #469cf7;
+                    border-radius: 3px;
+                }
+
+                img {
+                    width: 100px;
+                }
             }
         }
 
@@ -42,21 +54,7 @@
             color: #fff;
         }
 
-        .btn {
-            display: inline-block;
-            width: 150px;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-            text-decoration: none;
-            color: #fff;
-            background-color: #469cf7;
-            border-radius: 3px;
-        }
-
         .banner-img {
-            position: relative;
-            top: 150px;
             width: 300px;
             height: 300px;
             border-radius: 0 5px 5px 0;
@@ -64,27 +62,36 @@
 
     }
 
+    .work-bg {
+        height: 50vh;
+        background-image: url(../assets/tools.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
-    .illustrations-row {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 250px;
-
-        div {
+        .work-bg-content-container {
             display: flex;
-            flex-direction: column;
+            justify-content: space-around;
             align-items: center;
-            padding: 0 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            height: 50vh;
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            img {
+                width: 200px;
+            }
 
             p {
-                font-size: 18px;
+                color: white;
             }
         }
-    }
-
-    .illustrations {
-        width: 200px;
     }
 }
 
@@ -138,13 +145,6 @@
             }
     
         }
-
-        .illustrations-row {
-    
-            div {
-                padding: 0 10px;
-            }
-        }
     }
 }
 
@@ -154,64 +154,88 @@
     
         .header-row {
             flex-wrap: wrap;
+            margin: 60px 0;
 
             .banner-container {
-                width: 100%;
-                top: 0;
+                width: 350px;
                 border-radius: 5px 5px 0 0;
                 padding: 0 20px 40px 20px ;
-                height: 240px;
             }
     
             .banner-img {
-                width: 100%;
-                top: 0;
+                width: 390px;
                 border-radius: 0 0 5px 5px;
             }
         }
 
-        .illustrations-row {
-            flex-wrap: wrap;
-            margin-top: 450px;;
+        .work-bg {
     
-            div {
+            .work-bg-content-container {
+    
+                img {
+                    width: 120px;
+                }
     
                 p {
-                    font-size: 18px !important;
+                    color: white;
                 }
             }
-        }
-    
-        .illustrations {
-            margin-top: 50px;
         }
     }   
 }
 
-@media screen and (max-width: 420px) {
-    #header {
 
-        .illustrations-row {
-    
-            div {
-    
-                p {
-                    font-size: 16px !important;
-                }
-            }
-        }
-    }
-}
-
-
-@media screen and (max-width: 386px) {
+@media screen and (max-width: 390px) {
 
     #header {
+        background-image: none;
     
         .header-row {
+            margin-top: 0;
+            min-height: auto;
+
+            .banner-container {
+                border-radius: 0;
+                
+                div {
+    
+                    .btn {
+                        width: 150px;
+                        height: 20px;
+                        padding: 10px;
+                    }
+    
+                    img {
+                        width: 70px;
+                    }
+                }
+            }
+    
+            .banner-img {
+                border-radius: 0;
+            }
+
+            .h1 {
+                margin-top: 60px;
+            }
 
             .h2-1, .h2-2 {
                 font-size: 14px;
+            }
+        }
+
+        .work-bg {
+            margin-top: 30px;
+    
+            .work-bg-content-container {
+    
+                img {
+                    width: 100px;
+                }
+    
+                p {
+                    font-size: 12px;
+                }
             }
         }
     }
